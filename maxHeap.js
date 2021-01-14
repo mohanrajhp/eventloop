@@ -19,20 +19,22 @@ class Maxheap {
         this.heap.push(node);
 
         //find the correct position
-        if(this.heap.length > 1){
+        if(this.heap.length > 2){
 
             let current = this.heap.length - 1;
 
+            //Loop through checking if the parent is less.
+
             while(current > 1 && this.heap[Math.floor(current / 2)] < this.heap[current]){
                 
-                //we do the swapping
+                //swap
                 [
                     this.heap[Math.floor(current / 2)],this.heap[current]
                 ] = [
                     this.heap[current],this.heap[Math.floor(current / 2)]
                 ];
 
-                //we change the current.
+                //change the index
                 current = Math.floor(current / 2);
             }
         }
@@ -44,9 +46,13 @@ class Maxheap {
 
         //check if we got two elements in heap array.
         if(this.heap.length === 2){
+
+            //remove the Ist index value
             this.heap.splice(1,1);
+
         } else if (this.heap.length > 2) {
 
+            //assign last value to first index
             this.heap[1] = this.heap[this.heap.length - 1];
 
             //remove the last item
@@ -79,28 +85,28 @@ class Maxheap {
                 )
             ) {
 
-                /** first step is to check if the left side value is more than the right side */
+                //check if left node value is greater than parent.
                 if(this.heap[leftChildIndex] > this.heap[current]){
 
-                    /** swap with the current */
+                    //swap
                     [
                         this.heap[current],this.heap[leftChildIndex] 
                     ] = [
                         this.heap[leftChildIndex],this.heap[current]
                     ];
 
-                    //update the current.
+                    //update the parent node index.
                     current = leftChildIndex;
                 } else if(this.heap[rightChildIndex] > this.heap[current]){
 
-                    /** swap with the current */
+                    //swap
                     [
                         this.heap[current],this.heap[rightChildIndex]
                     ] = [
                         this.heap[rightChildIndex], this.heap[current]
                     ];
 
-                    //update the current
+                    //update the parent node index.
                     current = rightChildIndex;
                 };
 
@@ -109,7 +115,7 @@ class Maxheap {
                 rightChildIndex = current * 2 + 1;
             };
 
-            //incase the right child is undefined, but the left child index value is greater than the current.
+            //incase the right child index is undefined, but the left child index value is greater than the parent node value.
             if(this.heap[rightChildIndex] === undefined && this.heap[leftChildIndex] > this.heap[current]){
 
                 //swap

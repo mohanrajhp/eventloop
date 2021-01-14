@@ -18,13 +18,14 @@ class Minheap {
         //start by inserting the node at the end of the heap array.
         this.heap.push(node);
 
-        //finding the correct position.
+        
         if(this.heap.length > 2){
 
-            //the last index of the heap
+            //finding the correct position.
+
             let current = this.heap.length - 1;
 
-            //check that we are not in the first index and also the value before is greater than the value we are inserting.
+            //Loop through checking if parent is greater.
 
             while(current > 1 && this.heap[Math.floor(current / 2)] > this.heap[current]){
 
@@ -35,7 +36,7 @@ class Minheap {
                     this.heap[current],this.heap[Math.floor(current / 2)]
                 ];
 
-                //change the current now.
+                //change the index.
                 current = Math.floor(current / 2);
             }
 
@@ -45,16 +46,9 @@ class Minheap {
     //removing an element.
 
     remove(){
-
-
-        /**
-         * When there are more than two elements in an array,
-         * we put the right most element at the top and start comparing
-         * the child nodes.
-         */
-
         if(this.heap.length > 2){
 
+            //assign the last value to first index.
             this.heap[1] = this.heap[this.heap.length - 1];
 
             //remove the last item of the heap.
@@ -73,6 +67,7 @@ class Minheap {
                 return;
             };
 
+            //get the indexes
             let current = 1;
             let leftChildIndex = current * 2;
             let rightChildIndex = current * 2 + 1;
@@ -85,28 +80,30 @@ class Minheap {
                 ) 
 
             {
-                //check if the left child index value is less than that of right.
-                if(this.heap[leftChildIndex] < this.heap[rightChildIndex]){
+                //left node value is less than parent
+                if(this.heap[leftChildIndex] < this.heap[current]){
 
-                    //swap the current value with the left child index value
+                    //swap the values
+
                     [
                         this.heap[current],this.heap[leftChildIndex]
                     ] = [
                         this.heap[leftChildIndex],this.heap[current]
                     ];
 
-                    //change the current.
-                    current = leftChildIndex;
-                } else {
+                    //change the parent node index
 
-                    // swap the current value with the right child index value
+                    current = leftChildIndex;
+                } else if(this.heap[rightChildIndex] < this.heap[current]) {
+
+                    // swap
                     [
                         this.heap[current],this.heap[rightChildIndex]
                     ] = [
                         this.heap[rightChildIndex],this.heap[current]
                     ];
 
-                    //change the current.
+                    //change the parent node index.
                     current = rightChildIndex;
                 };
 
@@ -133,6 +130,7 @@ class Minheap {
         // if there are only two elements in the array.
         else if(this.heap.length === 2){
 
+            // remove the 1st index value
             this.heap.splice(1,1);
 
         } else {
