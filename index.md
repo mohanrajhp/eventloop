@@ -30,7 +30,7 @@ In a min-heap, the parent or root node is usually less than the children nodes. 
 
 #### Pictorial representation
 
-![min-heap](min-heap.jpg)//change the image url.
+![min-heap](/engineering-education/understanding-min-heap-vs-max-heap/min-heap.jpg)
 
 [Image Source](https://www.geeksforgeeks.org/difference-between-min-heap-and-max-heap/)
 
@@ -40,8 +40,7 @@ Based on the figure below, at every level, the smallest number is the root node.
 
 When illustrating min-heap we use a tree-based structure. But when stored in memory, we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
-![min-heap-implementation](min-heap-implementation.jpg)
-//change the image url
+![min-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/min-heap-implementation.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
@@ -278,8 +277,7 @@ In a max-heap, the parent or root node is usually greater than the children node
 
 #### Pictorial representation
 
-![max-heap](max-heap.jpg)
-//change the image url
+![max-heap](/engineering-education/understanding-min-heap-vs-max-heap/max-heap.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
@@ -289,8 +287,7 @@ Based on the figure below, at every level, the largest number is the root node.
 
 Similarly, when illustrating a max-heap we use a tree-based structure but when representing in memory we use an array-based structure. Consider the figure below showing the tree-based and memory-based representation.
 
-![max-heap-implementation](max-heap-implementation.jpg)
-//change the image url
+![max-heap-implementation](/engineering-education/understanding-min-heap-vs-max-heap/max-heap-implementation.jpg)
 
 [Image Source](https://blog.bitsrc.io/implementing-heaps-in-javascript-c3fbf1cb2e65)
 
